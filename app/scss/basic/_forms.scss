@@ -1,0 +1,46 @@
+label {
+  &.error {
+    
+  }
+}
+
+input,
+textarea {
+  &:focus {
+
+  }
+
+  &.error{
+
+  }
+}
+
+textarea {
+
+}
+
+@-moz-document url-prefix() {
+  select {
+    -moz-appearance: none;
+    background-image: url('../img/select.png');
+    padding-right: 50px;
+    border: 1px solid $c-border;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 30px 8px;
+  }
+}
+
+select {
+  &:focus {
+
+  }
+
+  &.error{
+
+  }
+}
+
+button {
+
+}

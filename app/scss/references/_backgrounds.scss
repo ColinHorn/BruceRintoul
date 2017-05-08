@@ -1,0 +1,18 @@
+//Background Retina Images
+@mixin background-retina($normal, $retina, $contain: false) {
+  background-image: image-url($normal);
+
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    background-image: image-url($retina);
+
+    @if $contain == true {
+      background-size: contain;
+    } @else {
+      background-size: (image-width($retina) / 2) (image-height($retina) / 2);
+    }
+  }
+
+  .ie8 & {
+    background-image: image-url($normal);
+  }
+}

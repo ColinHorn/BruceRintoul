@@ -1,0 +1,23 @@
+//Compass Import
+@import "compass/reset";
+@import "compass/css3";
+
+//Bootstrap Implementation
+@import '../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
+
+@import 'references/*';
+@import 'basic/*';
+@import 'structure/*';
+
+@import 'print.scss';
+
+@media (max-width:400px){
+	//DO NOT REMOVE, EXTRA SCREEN SIZE
+	.col-xxs-12 {
+		float: none;
+		width: 100%;
+	}
+	.hidden-xxs {
+		display: none!important;
+	}
+}
