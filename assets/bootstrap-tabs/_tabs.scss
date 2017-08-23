@@ -1,0 +1,36 @@
+
+.nav-tabs {
+  @include clearfix;
+  list-style:none;
+  padding:0;
+  > li {
+    float: left;
+    > a {
+      margin-right: 2px;
+    }
+
+    // Active state, and its :hover to override normal :hover
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: #f4f4f4;
+        cursor: default;
+      }
+    }
+  }
+}
+
+// Hide tabbable panes to start, show them when `.active`
+.tab-content {
+  display:block;
+  width:100%;
+  > .tab-pane {
+    display: none;
+    visibility: hidden;
+  }
+  > .active {
+    display: block;
+    visibility: visible;
+  }
+}
