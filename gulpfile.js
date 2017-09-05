@@ -18,12 +18,16 @@ var paths = {
 };
 
 gulp.task("kitFiles", function() {
-  return gulp.src("./kit/**/*.kit").pipe(kit()).pipe(gulp.dest("./")).pipe(
-    browserSync.reload({
-      injectChanges: true,
-      stream: true
-    })
-  );
+  return gulp
+    .src("./kit/**/*.kit")
+    .pipe(kit())
+    .pipe(gulp.dest("./"))
+    .pipe(
+      browserSync.reload({
+        injectChanges: true,
+        stream: true
+      })
+    );
 });
 
 gulp.task("sass", function() {
@@ -49,25 +53,12 @@ gulp.task("miniJS", function() {
     .src([
       "./assets/**/*.js",
       "./Scripts/**/*",
-      "!./Scripts/vendor/**",
       "!./Scripts/dist",
       "!./Scripts/dist/**"
     ])
     .pipe(uglify())
     .pipe(concat("allScripts.js"))
     .pipe(gulp.dest("./Scripts/dist/"));
-});
-
-gulp.task("image", function() {
-  gulp
-    .src([
-      "./images/**/*",
-      "!./images/select.png",
-      "!./images/optimised",
-      "!./images/optimised/**"
-    ])
-    .pipe(image())
-    .pipe(gulp.dest("./images/optimised/"));
 });
 
 gulp.task("browserSync", function() {
@@ -78,7 +69,7 @@ gulp.task("browserSync", function() {
   });
 });
 
-gulp.task("watch", ["browserSync", "sass", "miniJS", "image"], function() {
+gulp.task("watch", ["browserSync", "sass", "miniJS"], function() {
   gulp.watch("./scss/**/*.scss", ["sass"]);
   gulp.watch("./kit/**/*.kit", ["kitFiles"]);
   gulp.watch(["./Scripts/**/*.js", "!./Scripts/dist/*.js"], ["miniJS"]);
