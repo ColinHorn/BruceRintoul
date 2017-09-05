@@ -1,0 +1,16 @@
+/*LAYOUT -  header, footer, site container, sections, articles columns*/
+
+section {
+}
+
+article {
+}
+
+.l {
+  &-pagewrapper {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,50 @@
+.m-listen {
+  @include transition(all .5s ease-in-out);
+  @include centre();
+  width: 95%;
+  max-width: 500px;
+  transform: translate(-50%, -50%) scale(0);
+  transform-origin: center;
+  z-index: 9999;
+
+  .e-close {
+    position: absolute;
+    top: -35px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+
+    &:before,
+    &:after {
+      @include transition(all .3s ease-in-out);
+      @include centre();
+      content: " ";
+      display: block;
+      height: 2px;
+      width: 30px;
+      transform-origin: center;
+      background: $c-white;
+    }
+
+    &:before {
+      transform: translate(-50%, -50%) translateZ(0) rotate(-45deg);
+    }
+
+    &:after {
+      transform: translate(-50%, -50%) translateZ(0) rotate(45deg);
+    }
+
+    &:hover {
+      cursor: pointer;
+      &:before,
+      &:after {
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .listen-open & {
+    transition-delay: 0.5s;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

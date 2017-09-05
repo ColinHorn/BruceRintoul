@@ -1,0 +1,109 @@
+$screen-xs: 992px;
+$screen-sm: 992px;
+$screen-md: 992px;
+$screen-lg: 1230px;
+$screen-xl: 1460px;
+
+$gutter-width: 15px;
+$gutter-width-xl: 25px;
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  min-width: 992px;
+  padding-left: 15px;
+  padding-right: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  &:after {
+    content: '';
+    height: 0;
+    clear: both;
+    display: block;
+    visibility: hidden;
+  }
+
+  .row {
+    &:before,
+    &:after {
+      display: table;
+      content: " ";
+    }
+
+    &:after {
+      clear: both;
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    max-width: 750px;
+
+    .row {
+      margin-left: -$gutter-width;
+      margin-right: -$gutter-width;
+    }
+  }
+
+  @media (min-width: $screen-md) {
+    max-width: 970px;
+  }
+
+  @media (min-width: $screen-lg) {
+    max-width: 1200px;
+  }
+
+  @media (min-width: $screen-xl) {
+    max-width: 1390px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    .row {
+      margin-left: -$gutter-width-xl;
+      margin-right: -$gutter-width-xl;
+    }
+  }
+}
+
+//Include this on an element: @include grid(12, 6, 6, 4, 4, $padding: false);
+@mixin grid($xs, $sm, $md, $lg, $xl, $padding: true) {
+  width: percentage($xs / 12);
+  float: left;
+  position: relative;
+  padding-left: if($padding, $gutter-width, 0);
+  padding-right: if($padding, $gutter-width, 0);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  @media (min-width: $screen-xs) {
+    width: percentage($xs / 12);
+  }
+
+  @media (min-width: $screen-sm) {
+    width: percentage($sm / 12);
+  }
+
+  @media (min-width: $screen-md) {
+    width: percentage($md / 12);
+  }
+
+  @media (min-width: $screen-lg) {
+    width: percentage($lg / 12);
+  }
+
+  @media (min-width: $screen-xl) {
+    width: percentage($xl / 12);
+    padding-left: if($padding, $gutter-width-xl, 0);
+    padding-right: if($padding, $gutter-width-xl, 0);
+  }
+}
+
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}

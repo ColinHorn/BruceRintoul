@@ -1,0 +1,29 @@
+@import "references/*";
+
+@import "../assets/**/*.scss";
+@import "basic/*";
+@import "structure/*";
+@import "views/**/*";
+
+.widthtest {
+  @include clearfix;
+  .left,
+  .middle,
+  .right {
+  }
+
+  .left {
+    background: #ef2281;
+    @include grid(12, 6, 6, 4, 6);
+  }
+
+  .middle {
+    background: #ff8356;
+    @include grid(6, 6, 12, 4, 8);
+  }
+
+  .right {
+    background: #ff3300;
+    @include grid(6, 12, 8, 4, 4);
+  }
+}

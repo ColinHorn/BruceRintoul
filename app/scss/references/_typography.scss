@@ -1,8 +1,0 @@
-$body-font: arial, sans-serif;
-$title-font: arial, sans-serif;
-
-@mixin font-size($sizeValue: 1.6, $lineHeight: 2.4) {
-  font-size: ($sizeValue * 10) + px;
-  font-size: $sizeValue + rem;
-  line-height: ($lineHeight * 10) + px;
-}

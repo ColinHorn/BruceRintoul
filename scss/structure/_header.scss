@@ -1,0 +1,23 @@
+header {
+  @include transition(all .5s ease-in-out);
+  @include centre();
+  padding: 50px 0 0;
+  width: 100%;
+  z-index: 7777;
+  text-align: center;
+  transform-origin: center;
+  transform: translate(-50%, -50%) scale(1);
+
+  img {
+    width: 50px;
+    margin-top: -50px;
+  }
+
+  .listen-open &,
+  .about-open & {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  @media (min-width: $screen-lg) {
+  }
+}

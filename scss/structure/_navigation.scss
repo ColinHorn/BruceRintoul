@@ -1,0 +1,58 @@
+nav {
+  position: relative;
+  top: auto;
+  left: auto;
+  height: auto;
+  width: auto;
+  transform: translateZ(0);
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+
+      a {
+        @include font-size(1.8, 2.6);
+        text-transform: uppercase;
+        font-weight: 600;
+        color: $c-white;
+        border: none;
+        position: relative;
+
+        &:after {
+          @include transition(all .3s ease-in-out);
+          @include centre(x);
+          bottom: 0;
+          content: " ";
+          display: block;
+          position: absolute;
+          width: 0;
+          height: 2px;
+          background: $c-white;
+        }
+
+        &:hover {
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $screen-sm) {
+    ul {
+      li {
+        margin: 0 30px;
+
+        a {
+          @include font-size(2.4, 3.2);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+a {
+  @include transition (all .3s ease-in-out);
+  text-decoration: none;
+  color: $c-link;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-color: $c-link;
+
+    &:active,
+    &:focus {
+      color: darken($c-link, 10%);
+      border-color: darken($c-link, 10%);
+    }
+  }
+
+  &:active,
+  &:focus {
+    color: darken($c-link, 10%);
+    border-color: darken($c-link, 10%);
+  }
+
+  &.e-cta {
+    &:after {
+      @include fontAwesome;
+      content: "\f054";
+      margin-left: 8px;
+      vertical-align: middle;
+      margin-top: -2px;
+    }
+  }
+}

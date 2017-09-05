@@ -1,0 +1,33 @@
+/*****
+Reference to SMACSS - http://smacss.com/
+
+NAMING CONVENTIONS:
+c- : Color,
+l- : Layout,
+m- : Module,
+f- : Form,
+e- : Element,
+*****/
+
+//COLOURS
+$c-title: #ffffff;
+$c-text: rgba(255, 255, 255, 0.8);
+$c-link: #efefef;
+$c-lightgreytext: #777777;
+
+$c-white: #ffffff;
+$c-black: #000000;
+
+$c-lightgrey: #eef1f8;
+$c-mediumgrey: #575656;
+$c-darkgrey: #111111;
+
+$c-border: #dde1e4;
+
+$c-errorbg: #ffdcdc;
+
+$c-darkblue: #354579;
+
+$c-mobilenavbk: #333;
+$c-mobilenavtext: #fff;
+$c-hamburger: #888;

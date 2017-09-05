@@ -1,0 +1,54 @@
+.btn,
+button {
+  background: transparent;
+  border: 2px solid $c-darkblue;
+  color: $c-link;
+  padding: 15px 36px 15px;
+  text-transform: uppercase;
+  outline: none;
+  display: inline-block;
+  box-sizing: border-box;
+
+  &:hover {
+    background: $c-link;
+    color: $c-white;
+
+    &:active,
+    &:focus {
+      background: darken($c-link, 10%);
+      color: $c-white;
+    }
+  }
+
+  &:active,
+  &:focus {
+    background: darken($c-link, 10%);
+    color: $c-white;
+    outline: none;
+  }
+
+  &.btn-white {
+    color: $c-white;
+    border-color: $c-white;
+    background: transparent;
+
+    &:hover {
+      background: $c-white;
+      color: $c-link;
+
+      &:active,
+      &:focus {
+        background: darken($c-white, 10%);
+        border-color: darken($c-white, 10%);
+        color: $c-link;
+      }
+    }
+
+    &:active,
+    &:focus {
+      background: darken($c-white, 10%);
+      border-color: darken($c-white, 10%);
+      color: $c-link;
+    }
+  }
+}
