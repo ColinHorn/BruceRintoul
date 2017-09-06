@@ -13,10 +13,10 @@ nav {
 
     li {
       display: inline-block;
-      margin: 0 10px;
+      margin: 0 30px;
 
       a {
-        @include font-size(1.8, 2.6);
+        @include font-size(2.4, 3.2);
         text-transform: uppercase;
         font-weight: 600;
         color: $c-white;
@@ -47,10 +47,7 @@ nav {
   @media (min-width: $screen-sm) {
     ul {
       li {
-        margin: 0 30px;
-
         a {
-          @include font-size(2.4, 3.2);
         }
       }
     }
