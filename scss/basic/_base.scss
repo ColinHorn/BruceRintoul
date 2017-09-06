@@ -225,7 +225,7 @@ ol li {
 
 p {
   &.subtitle {
-    @include font-size(1.5, 2);
+    @include font-size(2, 2.8);
     font-weight: 300;
     text-transform: uppercase;
     margin: 0;
