@@ -1,11 +1,10 @@
 .m-about {
   @include transition(all .5s ease-in-out);
-  @include centre(x);
-  top: 30px;
+  @include centre();
   width: 95%;
   max-height: calc(100% - 140px);
   max-width: 700px;
-  transform: translate(-50%, 0) scale(0);
+  transform: translate(-50%, -50%) scale(0);
   transform-origin: center;
   background: rgba(0, 0, 0, 0.5);
   padding: 20px;
@@ -15,7 +14,7 @@
 
   .about-open & {
     transition-delay: 0.5s;
-    transform: translate(-50%, 0) scale(1);
+    transform: translate(-50%, -50%) scale(1);
   }
 
   h2 {
@@ -59,14 +58,7 @@
   }
 
   @media (min-width: $screen-sm) {
-    @include centre();
     padding: 50px;
-    transform: translate(-50%, -50%) scale(0);
-
-    .about-open & {
-      transition-delay: 0.5s;
-      transform: translate(-50%, -50%) scale(1);
-    }
 
     .e-close {
       top: 30px;
